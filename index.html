@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      background-color: hsl(30, 38%, 92%);
+    }
+
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 0.7rem;
+      color: hsl(228, 12%, 48%);
+      letter-spacing: 0.3rem;
+      padding: 1.5rem 0 1.5rem 0;
+
+    }
+    main{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .component{
+      display: flex;
+      width: min(90%, 37.5rem);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      
+    }
+    h1{
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 1.9rem;
+    }
+    .card{
+      background-color: hsl(0, 0%, 100%);
+      padding: 0 2rem;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      
+    }
+    picture{
+      display: block;
+      width: 50%;
+    }
+    .perfume{
+      width:100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cardInfo{
+      color: hsl(228, 12%, 48%);
+      font-weight: 500;
+      font-size: 0.875rem;
+      padding:1rem 0;
+    }
+    .prices{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .priceMain {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      text-decoration: line-through;
+      color: hsl(228, 12%, 48%);
+    }
+    .priceDiscount {
+      color: hsl(158, 36%, 37%);
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+    button{
+      display: block;
+      margin-top: auto;
+      border-radius: 0.5rem;
+      border: 0;
+      background-color: hsl(158, 36%, 37%);
+      color:white;
+      font-weight: 700;
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      margin-bottom: 1.8rem;
+    }
+
+    button:hover,
+    button:focus-visible {
+      background-color: hsl(158, 42%, 18%);
+    }
+    button:focus-visible {
+      outline: 0.125rem solid hsl(158, 36%, 20%);
+      outline-offset: 0.125rem;
+    }
+    .cart{
+      width: 0.8rem;
+      margin: 0 0.5rem 0 0;
+
+    }
+
+  @media (max-width: 768px) {
+    .component {
+      flex-direction: column;
+      width: 90%;
+    }
+    
+    picture {
+      width: 100%;
+    }
+
+    .card {
+      width: 100%;
+    }
+    .perfume {
+    height: auto;
+  }
+  }
+
+
+
+  </style>
+</head>
+<body>
+  <main>
+    <div class="component">
+      <picture>
+        <source
+          media="(max-width: 768px)"
+          srcset="images/image-product-mobile.jpg"
+        >
+        <img
+          class="perfume"
+          src="images/image-product-desktop.jpg"
+          alt="Perfume Gabrielle"
+        >
+      </picture>
+      <div class="card">
+        <h3>PERFUME</h3>
+
+        <h1>Gabrielle Essence Eau De Parfum</h1>
+
+        <p class="cardInfo">A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+        Perfumer-Creator for the House of CHANEL.</p>
+        
+        <div class="prices">
+            
+          <p class="priceDiscount">$149.99</p>
+          <p class="priceMain">$169.99</p>
+          
+        </div>
+        
+
+        <button><img class="cart" src="images/icon-cart.svg" alt="Cart Image">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
